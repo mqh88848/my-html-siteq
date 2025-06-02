@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>生日祝福幻灯片</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: "Microsoft YaHei", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 500px;
+    }
+    .message {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .next-btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .next-btn:hover {
+      background-color: #e65c50;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/03/audio_4e37b9c87b.mp3?filename=happy-birthday-142024.mp3" type="audio/mpeg">
+    您的浏览器不支持音频播放。
+  </audio>
+
+  <div class="container">
+    <div id="message" class="message">点击下方按钮开始生日盲盒 🎁</div>
+    <button class="next-btn" onclick="nextMessage()">下一页</button>
+  </div>
+
+  <script>
+    const messages = [
+      "1. 今天是你专属的高光时刻，快乐暴击100%！",
+      "2. 网络让我们认识，缘分让你过生日我来庆祝~",
+      "3. 愿你永远是朋友圈最靓的崽，不被学业困扰~",
+      "4. 岁月从不败美人，也绕不过你这尊大佛😎",
+      "5. 如果幸福有声音，那今天一定是你在笑~",
+      "6. 祝你天天开心、月月顺利、年年有人陪。",
+      "7. 最后一页是彩蛋，准备好了吗？",
+      "🎁 彩蛋：Happy Birthday!!! 🎂🎉 祝你万事顺意，一切都甜！"
+    ];
+
+    let index = 0;
+    function nextMessage() {
+      if (index < messages.length) {
+        document.getElementById("message").innerText = messages[index];
+        index++;
+      } else {
+        document.getElementById("message").innerText = "🎊 全部打开啦！祝你生日快乐！";
+      }
+    }
+  </script>
+</body>
+</html>
